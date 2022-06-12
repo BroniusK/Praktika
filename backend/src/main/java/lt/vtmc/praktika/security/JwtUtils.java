@@ -13,19 +13,19 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.util.WebUtils;
 
 import lt.vtmc.praktika.security.UserDetailsImpl;
-//import io.jsonwebtoken.*;
+import io.jsonwebtoken.*;
 
 @Component
 public class JwtUtils {
   private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
-  @Value("${bezkoder.app.jwtSecret}")
+  @Value("${praktika.app.jwtSecret}")
   private String jwtSecret;
 
-  @Value("${bezkoder.app.jwtExpirationMs}")
+  @Value("${praktika.app.jwtExpirationMs}")
   private int jwtExpirationMs;
 
-  @Value("${bezkoder.app.jwtCookieName}")
+  @Value("${praktika.app.jwtCookieName}")
   private String jwtCookie;
 
   public String getJwtFromCookies(HttpServletRequest request) {
